@@ -13,6 +13,8 @@ type Props = {
 const PostList: React.FC<Props> = ({ posts, showAddPost }) => {
 	const router = useRouter();
 	const [loading, setLoading] = useState<boolean>(true);
+	const sortedPosts = [...posts];
+	sortedPosts.sort((a, b) => a.id - b.id);
 
 	useEffect(() => {
 		setLoading(false);
@@ -27,7 +29,7 @@ const PostList: React.FC<Props> = ({ posts, showAddPost }) => {
 		<>
 			{!loading && (
 				<div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
-					{posts.map((post, i) => (
+					{sortedPosts.map((post, i) => (
 						<Card
 							className="bg-neutral hover:bg-neutral-focus hover:cursor-pointer group min-h-[20rem]"
 							key={i}
