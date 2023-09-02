@@ -140,6 +140,7 @@ const PostDetail: React.FC<Props> = ({ id }) => {
 								placeholder="Post title"
 								value={title}
 								onChange={(e) => setTitle(e.target.value)}
+								disabled={user != userId}
 							/>
 						</div>
 						<div className="form-control w-full">
@@ -153,6 +154,8 @@ const PostDetail: React.FC<Props> = ({ id }) => {
 								rows={4}
 								value={detail}
 								onChange={(e) => setDetail(e.target.value)}
+								disabled={user != userId}
+								className="disabled:resize-none"
 							/>
 						</div>
 						<div
