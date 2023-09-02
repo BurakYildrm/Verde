@@ -7,7 +7,7 @@ export async function generateMetadata() {
 	};
 }
 
-const Login: React.FC<void> = () => {
+const Login: React.FC = () => {
 	return (
 		<div className="flex-1 flex flex-col justify-center items-center">
 			<LoginForm />
